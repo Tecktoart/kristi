@@ -1,0 +1,40 @@
+<div class="col-md-6">
+<%= form_for @offer, url:offers_path do |f|  %>
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+      <% @offer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name,class:'form-control'  %>
+  </div>
+  <div class="field">
+    <%= f.label :offer %><br>
+    <%= f.text_field :offer,class:'form-control'  %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price,class:'form-control'   %>
+  </div>
+    <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone, class:'form-control' %>
+  </div>
+
+  <div class="nput-group date" id="datetimepicker2">
+    <%= f.label :date %><br>
+    <%= f.text_field :date, data: { provide: 'datepicker' },class:'form-control' %>
+  </div>
+    <br />
+    <%= f.submit class:'btn btn-primary' %>
+<% end %>
+    <br />
+   </div>
