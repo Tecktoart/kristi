@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Name:</strong>
+  <strong>ФИО:</strong>
   <%= @offer.name %>
 </p>
 
 <p>
-  <strong>Offer:</strong>
+  <strong>Услуга:</strong>
   <%= @offer.offer %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Стоимость:</strong>
   <%= @offer.price %>тыс.руб
 </p>
 
-<%= link_to 'Edit', edit_offer_path(@offer),class:'btn btn-primary' %>
-<%= link_to 'Back', offers_path,class:'btn btn-primary' %>
+<%= link_to 'Изменить', edit_offer_path(@offer),class:'btn btn-primary' %>
+<%= link_to 'Назад', offers_path,class:'btn btn-primary' %>

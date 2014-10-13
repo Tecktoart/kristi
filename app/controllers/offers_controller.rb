@@ -5,6 +5,7 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     @offers = Offer.all
+    @all_price = Offer.sum(:price)
   end
 
   # GET /offers/1

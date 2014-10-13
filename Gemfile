@@ -6,6 +6,7 @@ gem "twitter-bootstrap-rails"
 gem 'groupdate'
 gem 'chartkick'
 gem 'devise'
+gem 'will_paginate', '~> 3.0.5'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,5 +1,5 @@
 <div class="col-md-6">
-<%= form_for @offer, url:offers_path do |f|  %>
+<%= form_for @offer do |f|  %>
   <% if @offer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
@@ -13,28 +13,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'ФИО' %><br>
     <%= f.text_field :name,class:'form-control'  %>
   </div>
   <div class="field">
-    <%= f.label :offer %><br>
+    <%= f.label 'Услуга' %><br>
     <%= f.text_field :offer,class:'form-control'  %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label 'Стоимость' %><br>
     <%= f.number_field :price,class:'form-control'   %>
   </div>
     <div class="field">
-    <%= f.label :phone %><br>
+    <%= f.label 'Телефон' %><br>
     <%= f.text_field :phone, class:'form-control' %>
   </div>
 
-  <div class="nput-group date" id="datetimepicker2">
-    <%= f.label :date %><br>
-    <%= f.text_field :date, data: { provide: 'datepicker' },class:'form-control' %>
+  <div class="nput-group date">
+    <%= f.label 'Дата' %><br>
+
+    <%if @offer.date.nil? %>
+   <%= f.text_field :date, data: { provide: 'datepicker' }, class:'form-control'%>
+    <%else%><%= f.text_field :date, data: { provide: 'datepicker' },value: @offer.date.strftime('%m/%d/%Y'), class:'form-control' %>
+    <%end%>
   </div>
     <br />
     <%= f.submit class:'btn btn-primary' %>
+        <br />
+        </div>
 <% end %>
-    <br />
-   </div>
