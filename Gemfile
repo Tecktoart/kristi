@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-datepicker-rails'
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'groupdate'
 gem 'chartkick'
