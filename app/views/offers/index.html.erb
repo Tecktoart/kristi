@@ -29,5 +29,10 @@
       </tr>
     <% end %>
   </tbody>
+
 </table>
 <br>
+<div class="pagination">
+<%= will_paginate(@offers, :renderer => WillPaginate::ActionView::BootstrapLinkRenderer) %>
+</div>
+

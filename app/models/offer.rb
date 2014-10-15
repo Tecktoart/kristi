@@ -17,4 +17,5 @@ class Offer < ActiveRecord::Base
     end
   end
 
+  self.per_page = 30
 end

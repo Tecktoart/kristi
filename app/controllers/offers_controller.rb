@@ -4,8 +4,11 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+    page = params[:page] || 1
+    @offers = Offer.paginate(page: page).order('created_at DESC')
+
     @all_price = Offer.sum(:price)
+
   end
 
   # GET /offers/1
@@ -29,7 +32,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
+        format.html { redirect_to offers_path, notice: 'Offer was successfully created.' }
         format.json { render :show, status: :created, location: @offer }
       else
         format.html { render :new }
