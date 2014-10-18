@@ -3,7 +3,7 @@
 //= require bootstrap
 //= require turbolinks
 //= require bootstrap-datepicker
-//= require chartkick
 //= require jsapi
+//= require chartkick
 //= require_tree .
 
