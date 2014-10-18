@@ -17,5 +17,7 @@
 //= require_tree .
 //= require bootstrap-datepicker
 //= require chartkick
+//= require jsapi
 
 // app/assets/javascripts/application.js
+
