@@ -8,7 +8,7 @@ set :deploy_to, '/home/deployer/projects/kristik'
 set :scm, :git
 set :ssh_options, { :forward_agent => true }
 
-set :linked_files, %w{config/database.yml tmp/restart.txt}
+set :linked_files, %w{config/database.yml tmp/restart.txt db/production.sqlite3}
 set :linked_dirs, %w{log tmp/pids tmp/cache}
 
 
