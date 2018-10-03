@@ -1,9 +1,5 @@
 class Offer < ActiveRecord::Base
-  validates :name, presence: true
-  validates :offer, presence: true
-  validates :price, presence: true
-  validates :phone, presence: true
-  validates_presence_of :date
+  validates_presence_of :date, :name, :offer, :price, :phone
 
 
 
