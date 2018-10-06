@@ -1,8 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
-  # GET /offers
-  # GET /offers.json
   def index
     page = params[:page] || 1
     @offers = Offer.paginate(page: page).order('created_at DESC')
@@ -11,22 +9,14 @@ class OffersController < ApplicationController
 
   end
 
-  # GET /offers/1
-  # GET /offers/1.json
-  def show
-  end
+  def show; end
 
-  # GET /offers/new
   def new
     @offer = Offer.new
   end
 
-  # GET /offers/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /offers
-  # POST /offers.json
   def create
     @offer = Offer.new(offer_params)
 
@@ -41,8 +31,6 @@ class OffersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /offers/1
-  # PATCH/PUT /offers/1.json
   def update
     respond_to do |format|
       if @offer.update(offer_params)
@@ -55,8 +43,6 @@ class OffersController < ApplicationController
     end
   end
 
-  # DELETE /offers/1
-  # DELETE /offers/1.json
   def destroy
     @offer.destroy
     respond_to do |format|
@@ -66,16 +52,15 @@ class OffersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_offer
-      @offer = Offer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def offer_params
-      if params[:offer][:date].present?
-        params[:offer][:date] = Date.strptime(params[:offer][:date], '%m/%d/%Y')
-      end
-      params.require(:offer).permit(:name, :offer, :price,:phone, :date)
+  def set_offer
+    @offer = Offer.find(params[:id])
+  end
+
+  def offer_params
+    if params[:offer][:date].present?
+      params[:offer][:date] = Date.strptime(params[:offer][:date], '%m/%d/%Y')
     end
+    params.require(:offer).permit(:name, :offer, :price,:phone, :date)
+  end
 end
